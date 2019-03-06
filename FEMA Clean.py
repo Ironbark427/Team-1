@@ -2,7 +2,7 @@
 import pandas as pd
 
 # read in csv file into dataframe
-fema = pd.read_csv('DisasterDeclarationsSummaries.csv')
+fema = pd.read_csv('data/DisasterDeclarationsSummaries.csv')
 
 # drop columns that are irrelevant
 fema = fema.loc[:, ['disasterNumber', 'state', 'incidentBeginDate',
@@ -30,4 +30,4 @@ fema.monthEnd.fillna(fema.monthBegin, inplace=True)
 fema.drop(columns=['disasterNumber'], inplace=True)
 
 # write to csv
-fema.to_csv('fema_clean.csv', index=False)
+fema.to_csv('data/fema_clean.csv', index=False)
