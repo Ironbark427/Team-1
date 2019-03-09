@@ -116,28 +116,17 @@ fema.dropna(subset=['monthBegin', 'monthEnd'], inplace=True)
 
 data["Disaster"] = ""
 
-# newdf = pd.merge(data, fema, how='left'. left_on=['month_num','addr_state'], right_on=['aftermath','state'])
-i = 0
 
+def checkDisaster(row):
+    global fema
+    tmp_df = fema[(fema['monthEnd'] >= row['month_num'])
+                  & (fema['monthBegin'] == row['month_num'])]
+                  & (fema['state'] == row['addr_state'])]
+    if len(tmp_df) > 0:
+        return 'D'
+    else:
+        return 'N'
 
-#for index1, row1 in data.iterrows():
-#    data.at[index1,"Disaster"] = "D"
-#    i = i + 1
-#    if i == 5:
-#        break
-
-print(data.head())
-for index1, row1 in data.iterrows():
-    i = i + 1
-    print(f"Processing row: {i}")
-    if i == len(data.index):
-        break
-    for index2, row2 in fema.iterrows():
-        if (row1['month_num'] == row2['monthEnd'] + 1 and row1['addr_state'] == row2['state']):
-            data.at[index1,"Disaster"] = "D"
-            print("Yes")
-    #    else:
-    #        row1["Disaster"] = "N"
-    #        print("No")
+data['Disaster']= data.apply(lambda x: checkDisaster(x), axis=1)
 
 data.to_csv('data/data_fema_compare.csv', index=False)
