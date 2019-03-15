@@ -12,11 +12,11 @@ The core data used by Team 1 is the Lending Club Personal Loan Origination data 
 
 Additional data was downloaded from Data.Gov for FEMA Disaster Data
 
-* [FEMA Disaster Data Download] (https://www.fema.gov/openfema-dataset-disaster-declarations-summaries-v1) -- data source link
+* [FEMA Disaster Data Download](https://www.fema.gov/openfema-dataset-disaster-declarations-summaries-v1) -- data source link
 
 As well as additional data from the St. Louis Fed for delinquencies
 
-* [FRED Delinquency Data Download] (https://fred.stlouisfed.org/series/DRSFRMACBS) -- data source link
+* [FRED Delinquency Data Download](https://fred.stlouisfed.org/series/DRSFRMACBS) -- data source link
 
 Generic monthly stock market data obtainable from various sources, available in this data folder.
 
