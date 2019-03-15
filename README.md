@@ -1,4 +1,3 @@
-# University of Richmond - Data Analytics Bootcamp
 ## Project 1 - Team 1
 
 This is the first assigned project of the U of R - Data Analytics Bootcamp. The data chosen for this project by the team is the 2018 Lending Club Personal Loan Origination files. 
