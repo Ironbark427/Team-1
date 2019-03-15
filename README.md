@@ -30,10 +30,10 @@ Each team member was given free choice on what question they wanted to pose to t
 
 ## Team Members
 
-'Alice
-'Mike
-'Tefari
-'Juhlian
-'Nicholas
+''' Alice '''
+''' Mike '''
+''' Tefari '''
+''' Juhlian '''
+''' Nicholas ''' 
 
 
