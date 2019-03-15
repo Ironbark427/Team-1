@@ -1,0 +1,28 @@
+# Team 1 LendingClub primary notebook
+# import dependencies
+import pandas as pd
+import numpy as np # needed for replace nan code below
+import glob
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+# pull in all csvs and merge them into a single dataframe
+bigdf = pd.concat([pd.read_csv(f, low_memory=False, usecols=['loan_amnt','term','int_rate','installment','emp_length','home_ownership','annual_inc','issue_d','loan_status','pymnt_plan','purpose','title','addr_state','dti','delinq_2yrs','mths_since_last_delinq','open_acc','pub_rec','total_rec_late_fee','recoveries','collection_recovery_fee','mths_since_last_major_derog','chargeoff_within_12_mths','delinq_amnt','mo_sin_old_il_acct','mo_sin_old_rev_tl_op','mo_sin_rcnt_rev_tl_op','mo_sin_rcnt_tl','mort_acc','mths_since_recent_bc','mths_since_recent_bc_dlq','mths_since_recent_inq','mths_since_recent_revol_delinq','pct_tl_nvr_dlq','pub_rec_bankruptcies','tax_liens'
+]) for f in
+                    glob.glob('data/LoanStats*.csv')], ignore_index=True)
+
+bigdf.dropna(subset=['term', 'issue_d'], inplace=True)
+
+bigdf['int_rate'] = bigdf['int_rate'].str.replace("%","")
+
+bigdf['mths_since_recent_bc']=bigdf['mths_since_recent_bc'].replace(np.nan, 0)
+bigdf['mths_since_recent_bc_dlq']=bigdf['mths_since_recent_bc_dlq'].replace(np.nan, 0)
+bigdf['mths_since_recent_inq']=bigdf['mths_since_recent_inq'].replace(np.nan, 0)
+bigdf['emp_length']=bigdf['emp_length'].replace(np.nan, 0)
+bigdf['mths_since_recent_revol_delinq']=bigdf['mths_since_recent_revol_delinq'].replace(np.nan, 0)
+
+bigdf['int_rate'] = pd.to_numeric(bigdf['int_rate'], errors='coerce')
+
+bigdf.to_csv(r'combineddata.csv')
+
+bigdf
