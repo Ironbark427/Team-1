@@ -40,3 +40,17 @@ Each team member was given free choice on what question they wanted to pose to t
 
 ***Nicholas***
 
+## Findings
+
+Debt Consolidation loans were the largest type of loans
+
+Interest Rates spiked in the summer and again towards the holidays
+
+There very little correlation between the stock market and the loan data
+
+Natural disasters were not correlated to the loan data in terms of amount or timing
+
+Demographic data such as employment tenure and income were correlated to the loan type and amount
+
+People with high loan grade evaluations had less delinquency 
+
